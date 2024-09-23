@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="stycal.css">
+    <script>
+        function clearInput() {
+            document.querySelector('input[name="value"]').value = '';
+        }
+
+        function appendValue(value) {
+            document.querySelector('input[name="value"]').value += value;
+        }
+
+        function calculate() {
+            const input = document.querySelector('input[name="value"]').value;
+            try {
+                const result = eval(input);
+                document.querySelector('input[name="value"]').value = result;
+            } catch (e) {
+                alert("Invalid expression");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <form name="Calculator" class="Calculator">
+        <input type="text" name="value" id="display" readonly />
+        <span class="num clear" onclick="clearInput()">c</span>
+        <span class="num" onclick="appendValue('/')">/</span>
+        <span class="num" onclick="appendValue('7')">7</span>
+        <span class="num" onclick="appendValue('8')">8</span>
+        <span class="num" onclick="appendValue('9')">9</span>
+        <span class="num" onclick="appendValue('*')">*</span>
+        <span class="num" onclick="appendValue('4')">4</span>
+        <span class="num" onclick="appendValue('5')">5</span>
+        <span class="num" onclick="appendValue('6')">6</span> 
+        <span class="num" onclick="appendValue('-')">-</span> 
+        <span class="num" onclick="appendValue('1')">1</span> 
+        <span class="num" onclick="appendValue('2')">2</span> 
+        <span class="num" onclick="appendValue('3')">3</span> 
+        <span class="num" onclick="appendValue('+')">+</span> 
+        <span class="num" onclick="appendValue('0')">0</span>          
+        <span class="num" onclick="appendValue('.')">.</span> 
+        <span class="num" onclick="appendValue('%')">%</span> 
+        <span class="num equals" onclick="calculate()">=</span> 
+    </form>
+</body>
+</html>

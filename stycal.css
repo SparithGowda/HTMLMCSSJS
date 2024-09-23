@@ -1,0 +1,42 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Montserrat";
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e71953;
+}
+
+.Calculator{
+    display:grid;
+    position: relative;
+
+}
+
+.Calculator input{
+    grid-column: span 3;
+    height: 100px;
+    border: 100;
+    border-color: blue;
+    outline: lawngreen;
+    padding: 0px 30px 0px 30px;
+    font-size: 24px;
+    text-align: right;
+
+}
+
+.Calculator span{
+    padding: 20px;
+    background: #053fff;
+    border: 1px solid rgb(0,0,0.103);    
+}
+
+.Calculator span.clear{
+    grid-template-columns: span 4;
+}
