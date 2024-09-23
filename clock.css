@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Montserrat";
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    background-color: #ff2942;
+    padding: 10px 20px;
+    display: flex;
+    border: 10px solid #ff6f80;
+    margin-right: 50px;
+}
+
+h1{
+    margin-left: 130px;
+    font-size: 35px;
+}
