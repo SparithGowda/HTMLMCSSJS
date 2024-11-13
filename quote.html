@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of  Day</title>
+    <link rel="stylesheet" href="quotestyle.css">
+
+</head>
+
+
+<body>
+
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+        <blockquotes id="quote">Loading...</blockquotes>
+        <span id="author">Loading...</span>
+
+        <div>
+            <button onclick="getQuote(api_url)">NEW QUOTE</button>
+           
+        </div>
+
+        
+    </div>
+
+    <script>
+
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        
+        const api_url = "https://api.api-ninjas.com/v1/quotes";
+const api_key = "bxkj+qNsMnj+GV+enacKxw==g59lBDiBm1iB1oO2";
+
+async function getQuote(url) {
+    const response = await fetch(url, {
+        headers: {
+            "X-Api-Key": api_key
+        }
+    });
+
+    const data = await response.json();
+
+    // Assuming `quote` and `author` are elements in your HTML
+    if (data.length > 0) {
+        quote.innerHTML = data[0].quote;
+        author.innerHTML = data[0].author;
+    } else {
+        quote.innerHTML = "No quote available";
+        author.innerHTML = "";
+    }
+}
+
+// Call the function
+getQuote(api_url);
+
+
+     
+
+
+        </script>
+    
+</body>
+</html>
