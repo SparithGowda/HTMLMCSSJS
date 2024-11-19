@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-Box</title>
+    <link rel="stylesheet" href="stylepass.css">
+</head>
+
+<body>
+
+<div class="inp">
+    <input type="password" placeholder="password" id="password">
+    <img src="eyec.png" id="eyeicon">
+
+
+
+
+
+</div>
+
+<script>
+
+    let eyeicon = document.getElementById("eyeicon");
+    let password = document.getElementById("password");
+
+    eyeicon.onclick = function(){
+        if(password.type == "password"){
+            password.type = "text";
+            eyeicon.src = "eyeo.png"
+        }
+        else{
+            password.type = "password";
+            eyeicon.src = "eyec.png"
+
+        }
+
+    }
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
